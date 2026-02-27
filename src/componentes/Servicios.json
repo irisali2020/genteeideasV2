@@ -1,0 +1,31 @@
+[
+      { "id": "1", "titulo": "Planificación y Estrategia de Capital Humano", "descripcion": "Definición de planes y esquema de rendición de cuenta a distintos plazos.", "precio": "1000", "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsKRy7pB4dkPeuJdtyHEU9dCBZjlArlZUdtA&s", "categoria":"Consultoria"
+  },
+  {
+    "id": "2", "titulo": "Procesos y Procedimientos", "descripcion": "Levantamiento de Procesos con enfoque de calidad", "precio": "2000", "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgosswVA-pBl-QlgwpPQmOVcxGuJTNeR7hkQ&s", "categoria":"Consultoria"
+  },
+  {
+    "id": "3", "titulo": "Descripciones de Puestos", "descripcion": "Descripción de puestos orientada a los procesos que las requieren", "precio": "3000", "avatar":"https://www.yunbitsoftware.com/blog/wp-content/uploads/2016/04/flowchart-1200x798.jpg", "categoria":"Consultoria" 
+  },
+  {
+    "id": "4", "titulo": "Busqueda y Selección de Personal", "descripcion": "Proceso completo de busqueda de candidatos según las exigencias de los clientes", "precio": "4000", "avatar":"https://www.padulapartners.com/wp-content/uploads/2019/01/busqueda_directa-seleccion_de_personall.jpg", "categoria":"Consultoria"
+  },
+  {
+    "id": "5", "titulo": "Capacitación y Desarrollo", "descripcion": "Formación de personal a distintos niveles según el modelo de competencia de las empresas clientes", "precio": "5000", "avatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMCd0U0AWPNcCc-BkQqGhLoeFMgpynkhcZTw&s", "categoria":"Capacitación"
+  },
+  {
+    "id": "6", "titulo": "Evaluación de Desempeño", "descripcion": "Cerebro Triuno, Inteligencia Emocional", "precio": "6000", "avatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDb37MegIBBaNqh7MKwW1M5lBM2jIa4zIQWA&s", "categoria":"Capacitación"
+  },
+  {
+   "id": "7", "titulo": "Manejo de emociones", "descripcion": "Evaluación del desempeño del personal asociado a los objetivos de la empresa", "precio": "6000", "avatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGjSXvuxQ1sUDdwuH0konSJC1s3fOjPuwx8A&s", "categoria":"Capacitación"
+  },
+  {
+    "id": "8", "titulo": "Integración de Equipos", "descripcion": "Distinción entre grupo y equipo, Elementos de trabajo en equipo", "precio": "6000", "avatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWjGAiqq0r9MJNQnsw5UrOJP26pwjiLp0gcg&s", "categoria":"Capacitación"
+  },
+  {
+    "id": "9", "titulo": "Atención al cliente", "descripcion": "Actitud de Servicio, Clases de cliente, 10 componentes báasicos del servicio", "precio": "6000", "avatar": "https://bookline.ai/wp-content/uploads/2024/09/Atencio%CC%81n-cliente-hotel.jpg", "categoria":"Capacitación"
+  },
+  {
+     "id": "10", "titulo": "Liderando desde adentro", "descripcion": "El progreso personal, interpersonal y laboral; El liderazgo y los hábitos; Los principios y nuestra misión, nuestro rol, nuestras metas, pautas", "precio": "6000", "avatar": "https://dobetter.esade.edu/sites/default/files/post/2024-10/liderazgo-interior-m.webp", "categoria":"Capacitación"
+  }
+]
