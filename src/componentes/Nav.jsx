@@ -1,18 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react'; // 1. Importamos useState
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext'; // 1. Importamos el hook
+import { useAuth } from '../context/AuthContext'; 
+import { useCart } from '../context/CartContext'; // 2. Importamos tu hook del carrito
+import CartDropdown from './CartDropdown'; 
 
 export default function Nav() {   
-    // 2. Extraemos la info directamente del contexto (sin props)
     const { usuarioLogueado, logout } = useAuth();
+    const { totalCantidad } = useCart(); // 3. Extraemos la cantidad total
     const navigate = useNavigate();
+    
+    // 4. Estado local para controlar si el menú desplegable está visible
+    const [isCartOpen, setIsCartOpen] = useState(false);
 
     const manejarCerrarSesion = () => {
         logout();
         navigate('/');
     };
-    
 
+    // Función para alternar el estado del carrito
+    const toggleCart = () => {
+        setIsCartOpen(!isCartOpen);
+    };
+    
     return (   
         <nav style={{ backgroundColor: "#333", color: "white", padding: "10px", position: "relative", zIndex: 10 }}>   
             <ul style={{ listStyle: "none", display: "flex", justifyContent: "space-around", margin: 0, alignItems: "center" }}>   
@@ -21,7 +30,44 @@ export default function Nav() {
                 <li><Link to="/nosotros" style={{ color: "white", textDecoration: "none" }}>Acerca de</Link></li>   
                 <li><Link to="/servicios" style={{ color: "white", textDecoration: "none" }}>Servicios</Link></li>   
 
-                {/* 3. Lógica de Autenticación */}
+                {/* --- SECCIÓN DEL CARRITO --- */}
+                {/* Es crucial poner position: "relative" aquí para que el Dropdown se alinee con este botón */}
+                <li style={{ position: "relative" }}>
+                    <button 
+                        onClick={toggleCart}
+                        style={{
+                            backgroundColor: "transparent",
+                            border: "none",
+                            color: "white",
+                            cursor: "pointer",
+                            fontSize: "1.2rem",
+                            display: "flex",
+                            alignItems: "center"
+                        }}
+                        title="Ver carrito"
+                    >
+                        🛒
+                        {/* Globo con el número de items (solo se muestra si hay más de 0) */}
+                        {totalCantidad > 0 && (
+                            <span style={{
+                                backgroundColor: "#e74c3c",
+                                color: "white",
+                                borderRadius: "50%",
+                                padding: "2px 7px",
+                                fontSize: "0.75rem",
+                                marginLeft: "5px",
+                                fontWeight: "bold"
+                            }}>
+                                {totalCantidad}
+                            </span>
+                        )}
+                    </button>
+
+                    {/* 5. Renderizado condicional: Solo mostramos el componente si isCartOpen es true */}
+                    {isCartOpen && <CartDropdown />}
+                </li>
+
+                {/* --- Lógica de Autenticación --- */}
                 {usuarioLogueado ? (
                     <>
                         <li>
@@ -35,7 +81,7 @@ export default function Nav() {
                         </li>
                         <li>
                             <button 
-                                onClick={manejarCerrarSesion} // Usamos la función del contexto
+                                onClick={manejarCerrarSesion}
                                 style={{ 
                                     backgroundColor: "transparent", 
                                     border: "1px solid #e74c3c", 

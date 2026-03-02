@@ -1,0 +1,112 @@
+/* Contenedor principal del carrito */
+.cart-dropdown-container {
+    background-color: #f5eaeaef; /* Forzamos el fondo blanco */
+    color: #333333; /* Forzamos el texto a gris oscuro */
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra para que resalte sobre el fondo */
+    
+    /* Posicionamiento para que flote debajo del Nav */
+    position: absolute;
+    top: 100%; /* Lo empuja justo debajo de la barra de navegación */
+    right: 20px; /* Lo alinea a la derecha */
+    min-width: 250px;
+    z-index: 100; /* Asegura que quede por encima de todo lo demás */
+}
+
+/* Título del carrito */
+.cart-dropdown-title {
+    color: #2c3e50; /* Azul oscuro elegante */
+    margin-top: 0;
+    border-bottom: 2px solid #eee;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+/* Mensaje de carrito vacío y textos de los items */
+.empty-message, 
+.item-name, 
+.item-quantity {
+    color: #555555; /* Gris medio para asegurar que se lea bien */
+    font-size: 0.95rem;
+}
+
+/* Fila de cada servicio en el carrito */
+.cart-item-row {
+    display: flex;
+    color:#e0e0e0;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.item-name {
+    font-weight: 500;
+    color:#2b2a2a;
+}
+
+.item-quantity {
+    background-color: #f1f2f6;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    font-weight: bold;
+}
+
+/* Botón de procesar solicitud */
+.checkout-btn {
+    width: 100%;
+    background-color: #3498db; /* Azul corporativo */
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.checkout-btn:hover {
+    background-color: #2980b9;
+}
+
+/* --- NUEVOS ESTILOS PARA EL RESUMEN --- */
+
+/* Contenedor del resumen (Total y Vaciar) */
+.cart-summary {
+    margin-top: 15px;
+    border-top: 2px solid #eee; /* Línea divisoria */
+    padding-top: 15px;
+}
+
+/* Fila del precio total */
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 12px;
+}
+
+/* Botón de vaciar carrito */
+.clear-cart-btn {
+    background: none;
+    border: none;
+    color: #95a5a6; /* Gris sutil */
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 0.85rem;
+    width: 100%;
+    text-align: right; /* Alineado a la derecha */
+    padding: 0;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.clear-cart-btn:hover {
+    color: #e74c3c; /* Se pone rojo al pasar el mouse para indicar peligro de borrado */
+}

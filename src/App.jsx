@@ -13,7 +13,6 @@ import Inicio from './componentes/Inicio.jsx';
 import AcercaDe from './componentes/AcercaDe.jsx';
 import Nav from './componentes/Nav.jsx';
 import Main from './componentes/Main.jsx';
-import Carrito from './componentes/Carrito.jsx';
 import Consultoria from './componentes/TarjetaMock.jsx';
 import ProductoDetalle from './componentes/ServiciosDetalle.jsx';
 import RutaProtegida from './componentes/RutaProtegida';
@@ -38,12 +37,7 @@ function App() {
           }}>
             <Header />
             <Nav />
-            <div style={{ position: 'absolute', top: '120px', right: '20px', zIndex: 5 }}>
-               {/* OJO AQUÍ: Ya no pasamos props a Carrito. 
-                  Él mismo buscará los datos usando useCart() más adelante.
-               */}
-               <Carrito /> 
-            </div>
+            
           </div>
 
           <Main>
