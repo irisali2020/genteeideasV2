@@ -4,12 +4,13 @@ import { CartContext } from '../context/CartContext';
 import './CartIcon.css';
 
 const CartIcon = () => {
+  
   // Extraemos los items del carrito usando el contexto
-  const { cartItems } = useContext(CartContext);
+  const { cart } = useContext(CartContext);
 
   // Utilizamos reduce para sumar la cantidad total de productos
   // Empieza en 0 y va acumulando la propiedad 'quantity' de cada item
-  const totalItems = cartItems.reduce((total, item) => total + item.quantity, 0);
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   return (
     <div className="cart-icon-container">

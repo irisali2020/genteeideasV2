@@ -1,151 +1,142 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext'; // <--- 1. IMPORTANTE: Traemos el contexto
+import { useAuth } from '../context/AuthContext'; 
 import { useCart } from '../context/CartContext';
+import { toast } from 'react-toastify';
+import Buscador from './Buscador'; 
+import Paginacion from './Paginacion'; 
 
 export default function Consultoria() {
-
-  // 2. Extraemos la variable real del contexto
   const { usuarioLogueado } = useAuth(); 
-
   const { agregarAlCarrito } = useCart();
   
   const [productos, setProductos] = useState([]);
   const [cargando, setCargando] = useState(true);
   const [error, setError] = useState(null);
+  const [textoBusqueda, setTextoBusqueda] = useState(''); 
 
   const navigate = useNavigate();
 
-  // 3. useEffect limpio y corregido
-  useEffect(() => {
-    // Leemos la URL segura desde el archivo .env
-    const urlCursos = import.meta.env.VITE_API_CURSOS;
- fetch(urlCursos)
- .then((respuesta) => {
- if (!respuesta.ok) throw new Error('Error en la red');
- return respuesta.json();
- })
- .then((datos) => {
- setProductos(datos);
- setCargando(false);
- })
- .catch((error) => {
- setError('Hubo un problema al cargar los productos.');
- setCargando(false);
- });
- }, []);
+  // --- NUEVO 1: Estados para la paginación ---
+  const [paginaActual, setPaginaActual] = useState(1);
+  const [serviciosPorPagina] = useState(6); // Puse 6 para tener 2 filas de 3, pero puedes cambiarlo.
+  // -------------------------------------------
 
-  // 4. LÓGICA CENTRAL: Verifica sesión y decide
+  useEffect(() => {
+    const urlCursos = import.meta.env.VITE_API_CURSOS;
+    fetch(urlCursos)
+      .then((respuesta) => {
+        if (!respuesta.ok) throw new Error('Error en la red');
+        return respuesta.json();
+      })
+      .then((datos) => {
+        setProductos(datos);
+        setCargando(false); 
+      })
+      .catch((error) => {
+        setError('Hubo un problema al cargar los productos.');
+        setCargando(false); 
+      });
+  }, []);
+
+  // --- NUEVO 2: Regresar a la página 1 si el usuario usa el buscador ---
+  useEffect(() => {
+    setPaginaActual(1);
+  }, [textoBusqueda]);
+
+  // --- NUEVO 5: Efecto para subir la pantalla al cambiar de página ---
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth' // Esto hace que el deslizamiento sea suave en lugar de un salto brusco
+    });
+  }, [paginaActual]);
+  // ------------------------------------------------------------------
+  // ---------------------------------------------------------------------
+
   const manejarLoginYContratar = (producto) => {
-    
     if (usuarioLogueado) {
-      // CASO A: Usuario autenticado -> Agregamos al carrito
-      console.log("Usuario autenticado, agregando:", producto.titulo);
       agregarAlCarrito(producto); 
-      alert("¡Servicio agregado al carrito con éxito!");
-      // Aquí se queda en la misma página, listo para seguir comprando
+      toast.success("¡Servicio agregado al carrito con éxito!");
     } else {
-      // CASO B: No autenticado -> Lo mandamos al Login
-      console.log("Usuario no autenticado, redirigiendo...");
-      alert("Para contratar este servicio, por favor inicia sesión.");
+      toast.warning("Para contratar este servicio, por favor inicia sesión.");
       navigate('/login');
     }
   };
 
-  if (cargando) return <p style={{textAlign: 'center', marginTop: '50px'}}>Cargando servicios...</p>;
-  if (error) return <p style={{textAlign: 'center', color: 'red'}}>{error}</p>;
+  // 1. Primero filtramos según lo que escriba el usuario
+  const productosFiltrados = productos.filter((producto) =>
+    producto.titulo.toLowerCase().includes(textoBusqueda.toLowerCase()) ||
+    producto.descripcion.toLowerCase().includes(textoBusqueda.toLowerCase())
+  );
+
+  // --- NUEVO 3: Matemática de paginación sobre la lista YA filtrada ---
+  const indiceUltimoServicio = paginaActual * serviciosPorPagina;
+  const indicePrimerServicio = indiceUltimoServicio - serviciosPorPagina;
+  
+  // 2. Recortamos para tener solo los servicios de la página actual
+  const serviciosActuales = productosFiltrados.slice(indicePrimerServicio, indiceUltimoServicio);
+  // --------------------------------------------------------------------
+
+  if (cargando) return <p className="text-center mt-5">Cargando servicios...</p>;
+  if (error) return <p className="text-center text-danger mt-5">{error}</p>;
 
   return (
-    <>        
-      <ul style={{ 
-          display: 'flex', 
-          flexWrap: 'wrap', 
-          listStyle: 'none', 
-          padding: '20px', 
-          margin: 0,
-          justifyContent: 'center', 
-          alignItems: 'center', 
-          minHeight: '100vh', 
-          width: '100%',
-          backgroundColor: '#f0f0f0' 
-      }}>
-        {productos.map((producto) => (
-          <li key={producto.id}>
-            <div style={estilos.card}>
-              
-              <img src={producto.avatar} alt={producto.titulo} style={estilos.avatar} />
-              
-              <h3 style={estilos.titulo}>{producto.titulo}</h3>
-              <p style={estilos.descripcion}>{producto.descripcion}</p>
+    <div className="container py-5 bg-light min-vh-100 border border-danger border-3"> 
+      
+      <h2 className="text-center mb-4">Nuestros Servicios</h2>
 
-              <div style={{ padding: '15px' }}>            
-                {/* Link a Detalles */}
-                <Link to={`/servicios/${producto.id}`} style={{textDecoration: 'none', color: '#007bff', fontWeight: 'bold'}}>
-                  Ver detalles
-                </Link>
+      <Buscador 
+        valor={textoBusqueda} 
+        onChange={(e) => setTextoBusqueda(e.target.value)} 
+      />
+
+      <div className="row g-4 justify-content-center border border-3 border-primary p-2"> 
+        
+        {/* Usamos serviciosActuales.length en vez de productosFiltrados.length */}
+        {serviciosActuales.length === 0 ? (
+          <div className="col-12 text-center text-muted my-5">
+            <h5>No encontramos servicios que coincidan con "{textoBusqueda}"</h5>
+          </div>
+        ) : (
+          // --- NUEVO 4: Iteramos sobre 'serviciosActuales' en lugar de 'productosFiltrados' ---
+          serviciosActuales.map((producto) => (
+            <div className="col-12 col-md-6 col-lg-4 border border-2 border-success p-2" key={producto.id}>
+              <div className="card h-100 shadow-sm border-0">
+                <img 
+                  src={producto.avatar} 
+                  alt={producto.titulo} 
+                  className="card-img-top" 
+                  style={{ height: '200px', objectFit: 'cover' }} 
+                />
+                <div className="card-body d-flex flex-column">
+                  <h5 className="card-title text-dark">{producto.titulo}</h5>
+                  <p className="card-text text-muted mb-4">{producto.descripcion}</p>
+                  
+                  <div className="mt-auto text-center"> 
+                    <Link to={`/servicios/${producto.id}`} className="text-primary text-decoration-none fw-bold d-block mb-3">
+                      Ver detalles
+                    </Link>
+                    <button className="btn btn-success w-100 fw-bold" onClick={() => manejarLoginYContratar(producto)}>
+                      Contratar
+                    </button>
+                  </div>
+                </div>
               </div>
-
-              {/* 5. UNIFICACIÓN: Solo un botón "Contratar" que es inteligente */}
-              <button 
-                style={estilos.boton}
-                onClick={() => manejarLoginYContratar(producto)}
-              >
-                Contratar
-              </button>
-
-              {/* Eliminé el segundo botón "Agregar al Carrito" porque era redundante */}
-
             </div>
-          </li>
-        ))}
-      </ul>
-    </>
+          ))
+        )}
+
+      </div>
+      
+      {/* AQUÍ IRA NUESTRO COMPONENTE HIJO <Paginacion /> CUANDO LO CREEMOS */}
+      <Paginacion 
+        serviciosPorPagina={serviciosPorPagina} 
+        totalServicios={productosFiltrados.length} 
+        paginar={(numeroPagina) => setPaginaActual(numeroPagina)} 
+        paginaActual={paginaActual} 
+      />
+
+    </div>
   );
 }
-
-const estilos = {
-  card: { 
-    border: '1px solid #ddd', // Lo puse gris suave, el rojo era muy fuerte
-    backgroundColor: '#ffffff', 
-    borderRadius: '8px', 
-    padding: '20px', 
-    width: '250px', 
-    boxShadow: '0 4px 8px rgba(0,0,0,0.1)', 
-    margin: '15px',
-    textAlign: 'center',
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'space-between'
-  },
-  titulo: { 
-    fontSize: '1.2rem', 
-    margin: '10px 0', 
-    color: '#333' 
-  },
-  descripcion: {  
-    fontSize: '0.9rem', 
-    margin: '0 0 15px 0', 
-    color: '#666', 
-    height: '60px', // Altura fija para que las tarjetas queden parejas
-    overflow: 'hidden'
-  },
-  boton: { 
-    backgroundColor: '#28a745', // Verde "Compra"
-    color: 'white', 
-    border: 'none', 
-    padding: '10px', 
-    borderRadius: '4px', 
-    cursor: 'pointer',
-    width: '100%',
-    fontSize: '1rem',
-    fontWeight: 'bold',
-    marginTop: '10px'
-  }, 
-  avatar: {
-    width: '100%', 
-    height: '150px', // Altura fija para imágenes uniformes
-    objectFit: 'cover', // Recorta la imagen para que no se deforme
-    borderRadius: '4px', 
-    marginBottom: '10px'
-  } 
-};

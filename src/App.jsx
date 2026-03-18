@@ -1,6 +1,9 @@
 import { useState } from 'react'; // Puedes quitar useState si ya no lo usas para otra cosa
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import ScrollToTop from './componentes/ScrollToTop.jsx';
 
 // Importamos los contextos
 import { AuthProvider } from './context/AuthContext';
@@ -14,19 +17,19 @@ import AcercaDe from './componentes/AcercaDe.jsx';
 import Nav from './componentes/Nav.jsx';
 import Main from './componentes/Main.jsx';
 import Consultoria from './componentes/TarjetaMock.jsx';
+import BotonSubir from './componentes/BotonSubir.jsx';
 import ProductoDetalle from './componentes/ServiciosDetalle.jsx';
 import RutaProtegida from './componentes/RutaProtegida';
 import Footer from './componentes/Footer.jsx';
 
 function App() {
-  // Nota: Borré 'manejarClick' si no lo usas, pero si lo necesitas, déjalo.
-  // Borré 'itemsCarrito', 'agregarAlCarrito' y 'vaciarCarrito'. Ya no viven aquí.
-
+  
   return (
     <>
       <AuthProvider>
         {/* Conectamos el CartProvider DENTRO del AuthProvider */}
         <CartProvider>
+          <ScrollToTop /> {/* <-- AQUÍ VA EL COMPONENTE INVISIBLE */}
           
           <div style={{ 
               position: 'sticky', 
@@ -66,6 +69,15 @@ function App() {
             </Routes>          
           </Main>        
           <Footer />
+
+          <BotonSubir />
+
+          {/* Agregas el ToastContainer al final, fuera del flujo normal */}
+          <ToastContainer 
+            position="top-right" // Se mostrarán en la esquina inferior derecha
+            autoClose={3000}        // Se cierran solos a los 3 segundos
+            hideProgressBar={false}
+          />
 
         </CartProvider>
       </AuthProvider> 
