@@ -7,8 +7,10 @@ import Buscador from './Buscador';
 import Paginacion from './Paginacion'; 
 
 export default function Consultoria() {
-  const { usuarioLogueado } = useAuth(); 
+  const { usuarioLogueado } = useAuth();
   const { agregarAlCarrito } = useCart();
+
+  
   
   const [productos, setProductos] = useState([]);
   const [cargando, setCargando] = useState(true);
@@ -54,15 +56,7 @@ export default function Consultoria() {
   // ------------------------------------------------------------------
   // ---------------------------------------------------------------------
 
-  const manejarLoginYContratar = (producto) => {
-    if (usuarioLogueado) {
-      agregarAlCarrito(producto); 
-      toast.success("¡Servicio agregado al carrito con éxito!");
-    } else {
-      toast.warning("Para contratar este servicio, por favor inicia sesión.");
-      navigate('/login');
-    }
-  };
+  
 
   // 1. Primero filtramos según lo que escriba el usuario
   const productosFiltrados = productos.filter((producto) =>
@@ -82,7 +76,7 @@ export default function Consultoria() {
   if (error) return <p className="text-center text-danger mt-5">{error}</p>;
 
   return (
-    <div className="container py-5 bg-light min-vh-100 border border-danger border-3"> 
+    <div className="container py-5 bg-light min-vh-100 border  border-3"> 
       
       <h2 className="text-center mb-4">Nuestros Servicios</h2>
 
@@ -91,7 +85,7 @@ export default function Consultoria() {
         onChange={(e) => setTextoBusqueda(e.target.value)} 
       />
 
-      <div className="row g-4 justify-content-center border border-3 border-primary p-2"> 
+      <div className="row g-4 justify-content-center border  p-2"> 
         
         {/* Usamos serviciosActuales.length en vez de productosFiltrados.length */}
         {serviciosActuales.length === 0 ? (
@@ -117,9 +111,15 @@ export default function Consultoria() {
                     <Link to={`/servicios/${producto.id}`} className="text-primary text-decoration-none fw-bold d-block mb-3">
                       Ver detalles
                     </Link>
-                    <button className="btn btn-success w-100 fw-bold" onClick={() => manejarLoginYContratar(producto)}>
-                      Contratar
-                    </button>
+                    <button 
+                      className="btn btn-success w-100 fw-bold" 
+                      onClick={() => {
+                        agregarAlCarrito(producto);
+                        alert("¡Servicio agregado a tu selección!"); // Opcional: un pequeño aviso para el cliente
+                        }}
+                        >
+                          Consultar
+                        </button>
                   </div>
                 </div>
               </div>

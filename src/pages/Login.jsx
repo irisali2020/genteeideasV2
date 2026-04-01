@@ -53,7 +53,7 @@ function Login() {
         />
         
         <BotonMagico type="submit">
-          Entrar y Contratar
+          Entrar y Consultar
         </BotonMagico>
       </form>
     </div>

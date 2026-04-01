@@ -1,4 +1,5 @@
 import { useState } from 'react'; // Puedes quitar useState si ya no lo usas para otra cosa
+import React, { Suspense, lazy } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css';

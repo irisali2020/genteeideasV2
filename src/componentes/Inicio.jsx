@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { 
   Users, 
@@ -15,15 +15,10 @@ import {
 
 export default function Inicio() {
   
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert('Gracias por contactar a Gente & Ideas. Te responderemos pronto.');
-  };
-
   return (
     <div className="d-flex flex-column min-vh-100">
       
-      {/* --- Hero Section (Usando Styled Components para el fondo) --- */}
+      {/* --- Hero Section --- */}
       <HeroWrapper id="inicio" className="d-flex align-items-center justify-content-center text-center text-white relative">
         <div className="container">
           <span className="badge rounded-pill border border-light bg-transparent p-2 mb-4 text-uppercase">
@@ -51,7 +46,7 @@ export default function Inicio() {
       </HeroWrapper>
 
       {/* --- Servicios Section --- */}
-      <section id="servicios" className="py-5 bg-light">
+      <section id="servicios" className="py-5 bg-light" style={{ scrollMarginTop: '150px' }}>
         <div className="container py-5">
           <div className="text-center mb-5">
             <h2 className="text-primary fw-bold text-uppercase fs-6 mb-2">Nuestras Soluciones</h2>
@@ -98,7 +93,8 @@ export default function Inicio() {
               </div>
             </div>
           </div>
-          {/* --- NUEVO BOTÓN PARA IR A CONSULTORÍA / SERVICIOS --- */}
+          
+          {/* BOTÓN PARA IR A SERVICIOS */}
           <div className="text-center mt-5 pt-3">
             <Link 
               to="/servicios" 
@@ -107,9 +103,7 @@ export default function Inicio() {
               Ver todos los servicios <ArrowRight size={20} />
             </Link>
           </div>
-
         </div>
-
       </section>
 
       {/* --- Nosotros / Historia Section --- */}
@@ -120,9 +114,12 @@ export default function Inicio() {
             <div className="col-lg-6 position-relative">
               <h2 className="display-5 fw-bold mb-4">Nosotros</h2>
               <img 
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" 
+                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
                 alt="Reunión de equipo" 
                 className="img-fluid rounded shadow-lg" 
+                width="600"
+                height="337"
+                loading="lazy"
               />
             </div>
 
@@ -138,6 +135,7 @@ export default function Inicio() {
                 Hemos acompañado a varias empresas en Venezuela, transformando desafíos de recursos humanos en oportunidades de crecimiento tangible.
               </p>
 
+              {/* CAJA DE ESTADÍSTICAS - Corregida la estructura aquí */}
               <div className="row text-center mb-5 border-top border-bottom py-4">
                 <div className="col-4 border-end">
                   <p className="h2 fw-bold text-primary mb-0">+20</p>
@@ -145,26 +143,23 @@ export default function Inicio() {
                 </div>
                 <div className="col-4 border-end">
                   <p className="h2 fw-bold text-primary mb-0">+</p>
-                  <p className="small text-muted text-uppercase mb-0">Proyectos a la medida</p>
+                  <p className="small text-muted text-uppercase mb-0">Proyectos</p>
                 </div>
                 <div className="col-4">
                   <p className="h2 fw-bold text-primary mb-0">100%</p>
                   <p className="small text-muted text-uppercase mb-0">Compromiso</p>
                 </div>
-                {/* --- NUEVO BOTÓN PARA IR A CONSULTORÍA / SERVICIOS --- */}
-          <div className="text-center mt-5 pt-3">
-            <Link 
-              to="/nosotros" 
-              className="btn btn-primary btn-lg px-5 py-3 fw-bold shadow-sm d-inline-flex align-items-center gap-2"
-            >
-              Acerca de <ArrowRight size={20} />
-            </Link>
-          </div>
               </div>
 
-              {/* <a href="#contacto" className="btn btn-primary btn-lg">
-                Conoce al equipo
-              </a> */}
+              {/* BOTÓN ACERCA DE - Ahora está fuera de la caja de estadísticas */}
+              <div className="text-center mt-5 pt-3">
+                <Link 
+                  to="/nosotros" 
+                  className="btn btn-primary btn-lg px-5 py-3 fw-bold shadow-sm d-inline-flex align-items-center gap-2"
+                >
+                  Acerca de <ArrowRight size={20} />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -216,32 +211,37 @@ export default function Inicio() {
             {/* Formulario */}
             <div className="col-lg-7">
               <div className="bg-white rounded p-4 p-md-5 text-dark shadow">
-                <form onSubmit={handleSubmit}>
+                
+                <form action="https://formspree.io/f/xeepjypg" method="POST">
+                  
                   <div className="row g-3 mb-3">
                     <div className="col-sm-6">
                       <label className="form-label text-muted small">Nombre</label>
-                      <input type="text" className="form-control form-control-lg" required />
+                      <input type="text" name="nombre" className="form-control form-control-lg" required />
                     </div>
                     <div className="col-sm-6">
                       <label className="form-label text-muted small">Apellido</label>
-                      <input type="text" className="form-control form-control-lg" required />
+                      <input type="text" name="apellido" className="form-control form-control-lg" required />
                     </div>
                   </div>
+                  
                   <div className="mb-3">
                     <label className="form-label text-muted small">Email Corporativo</label>
-                    <input type="email" className="form-control form-control-lg" required />
+                    <input type="email" name="email" className="form-control form-control-lg" required />
                   </div>
+                  
                   <div className="mb-4">
                     <label className="form-label text-muted small">Mensaje</label>
-                    <textarea rows="4" className="form-control form-control-lg" required></textarea>
+                    <textarea name="mensaje" rows="4" className="form-control form-control-lg" required></textarea>
                   </div>
+                  
                   <button type="submit" className="btn btn-primary btn-lg w-100">
                     Enviar Mensaje
                   </button>
-                </form>
+                  
+                </form> 
               </div>
-            </div>
-
+            </div>          
           </div>
         </div>
       </section> 
@@ -249,11 +249,11 @@ export default function Inicio() {
   );
 }
 
-// Styled Component para manejar el fondo oscuro de la primera sección
+// Styled Component
 const HeroWrapper = styled.section`
   height: 100vh;
-  background-image: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.75)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+  background-image: linear-gradient(rgba(30, 58, 138, 0.85), rgba(30, 58, 138, 0.75)), url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=60');
   background-size: cover;
   background-position: center;
-  background-attachment: fixed; /* Le da un pequeño efecto parallax muy moderno */
+  background-attachment: fixed;
 `;

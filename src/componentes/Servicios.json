@@ -1,31 +1,114 @@
 [
-      { "id": "1", "titulo": "Planificación y Estrategia de Capital Humano", "descripcion": "Definición de planes y esquema de rendición de cuenta a distintos plazos.", "precio": "1000", "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsKRy7pB4dkPeuJdtyHEU9dCBZjlArlZUdtA&s", "categoria":"Consultoria"
+  {
+    "id": "1",
+    "titulo": "Planificación y Estrategia de Capital Humano",
+    "descripcion": "Definición de planes y esquema de rendición de cuenta a distintos plazos.",
+    "precio": "1000",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRsKRy7pB4dkPeuJdtyHEU9dCBZjlArlZUdtA&s",
+    "categoria": "Consultoria"
   },
   {
-    "id": "2", "titulo": "Procesos y Procedimientos", "descripcion": "Levantamiento de Procesos con enfoque de calidad", "precio": "2000", "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgosswVA-pBl-QlgwpPQmOVcxGuJTNeR7hkQ&s", "categoria":"Consultoria"
+    "id": "2",
+    "titulo": "Procesos y Procedimientos",
+    "descripcion": "Levantamiento de Procesos con enfoque de calidad",
+    "precio": "12.000",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgosswVA-pBl-QlgwpPQmOVcxGuJTNeR7hkQ&s",
+    "categoria": "asesoria"
   },
   {
-    "id": "3", "titulo": "Descripciones de Puestos", "descripcion": "Descripción de puestos orientada a los procesos que las requieren", "precio": "3000", "avatar":"https://www.yunbitsoftware.com/blog/wp-content/uploads/2016/04/flowchart-1200x798.jpg", "categoria":"Consultoria" 
+    "id": "3",
+    "titulo": "Descripciones de Puestos",
+    "descripcion": "Descripción de puestos orientada a los procesos que las requieren",
+    "precio": "3000",
+    "avatar": "https://www.yunbitsoftware.com/blog/wp-content/uploads/2016/04/flowchart-1200x798.jpg",
+    "categoria": "Consultoria"
   },
   {
-    "id": "4", "titulo": "Busqueda y Selección de Personal", "descripcion": "Proceso completo de busqueda de candidatos según las exigencias de los clientes", "precio": "4000", "avatar":"https://www.padulapartners.com/wp-content/uploads/2019/01/busqueda_directa-seleccion_de_personall.jpg", "categoria":"Consultoria"
+    "id": "4",
+    "titulo": "Busqueda y Selección de Personal",
+    "descripcion": "Proceso completo de busqueda de candidatos según las exigencias de los clientes",
+    "precio": "4000",
+    "avatar": "https://www.padulapartners.com/wp-content/uploads/2019/01/busqueda_directa-seleccion_de_personall.jpg",
+    "categoria": "Consultoria"
   },
   {
-    "id": "5", "titulo": "Capacitación y Desarrollo", "descripcion": "Formación de personal a distintos niveles según el modelo de competencia de las empresas clientes", "precio": "5000", "avatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMCd0U0AWPNcCc-BkQqGhLoeFMgpynkhcZTw&s", "categoria":"Capacitación"
+    "id": "5",
+    "titulo": "Capacitación y Desarrollo",
+    "descripcion": "Servicios de formación de personal a distintos niveles según el modelo de competencia de las empresas clientes según catalogo de talleres practicos.",
+    "precio": "5000",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMCd0U0AWPNcCc-BkQqGhLoeFMgpynkhcZTw&s",
+    "categoria": "Capacitación"
   },
   {
-    "id": "6", "titulo": "Evaluación de Desempeño", "descripcion": "Cerebro Triuno, Inteligencia Emocional", "precio": "6000", "avatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDb37MegIBBaNqh7MKwW1M5lBM2jIa4zIQWA&s", "categoria":"Capacitación"
+    "id": "6",
+    "titulo": "Evaluación de Desempeño",
+    "descripcion": "Desarrollo y habilitación del sistema de evaluación de desempeño con el enfoque que mas se ajuste a cada empresa (tradicional supervisor-supervisado, 360°)",
+    "precio": "6000",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSDb37MegIBBaNqh7MKwW1M5lBM2jIa4zIQWA&s",
+    "categoria": "Capacitación"
   },
   {
-   "id": "7", "titulo": "Manejo de emociones", "descripcion": "Evaluación del desempeño del personal asociado a los objetivos de la empresa", "precio": "6000", "avatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGjSXvuxQ1sUDdwuH0konSJC1s3fOjPuwx8A&s", "categoria":"Capacitación"
+    "id": "7",
+    "titulo": "Manejo de emociones",
+    "descripcion": "Curso de 8 o 16 horas:Cerebro triuno, inteligencia emocional, emociones que afectan el proceso de comunicación y asertividad.",
+    "precio": "6000",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGjSXvuxQ1sUDdwuH0konSJC1s3fOjPuwx8A&s",
+    "categoria": "Capacitación"
   },
   {
-    "id": "8", "titulo": "Integración de Equipos", "descripcion": "Distinción entre grupo y equipo, Elementos de trabajo en equipo", "precio": "6000", "avatar":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWjGAiqq0r9MJNQnsw5UrOJP26pwjiLp0gcg&s", "categoria":"Capacitación"
+    "id": "8",
+    "titulo": "Integración de Equipos",
+    "descripcion": "Taller de 8 horas: Distinción entre grupo y equipo, Elementos de trabajo en equipo",
+    "precio": "6000",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWjGAiqq0r9MJNQnsw5UrOJP26pwjiLp0gcg&s",
+    "categoria": "Capacitación"
   },
   {
-    "id": "9", "titulo": "Atención al cliente", "descripcion": "Actitud de Servicio, Clases de cliente, 10 componentes báasicos del servicio", "precio": "6000", "avatar": "https://bookline.ai/wp-content/uploads/2024/09/Atencio%CC%81n-cliente-hotel.jpg", "categoria":"Capacitación"
+    "id": "10",
+    "titulo": "Liderando desde adentro",
+    "descripcion": "Taller practico de 16 horas dirigido al progreso personal, interpersonal y laboral; el liderazgo y los hábitos; los principios y nuestra misión, nuestro rol, nuestras metas, pautas.",
+    "precio": "6000",
+    "avatar": "https://dobetter.esade.edu/sites/default/files/post/2024-10/liderazgo-interior-m.webp",
+    "categoria": "Capacitación"
   },
   {
-     "id": "10", "titulo": "Liderando desde adentro", "descripcion": "El progreso personal, interpersonal y laboral; El liderazgo y los hábitos; Los principios y nuestra misión, nuestro rol, nuestras metas, pautas", "precio": "6000", "avatar": "https://dobetter.esade.edu/sites/default/files/post/2024-10/liderazgo-interior-m.webp", "categoria":"Capacitación"
+    "titulo": "Control de Gestión ",
+    "descripcion": "Curso de 16 horas dirigido a Control de Gestión de la función de Capital Humano con Balanced ScoreCard. EN DESARROLLO.",
+    "precio": "893.39",
+    "avatar": "https://www.webyempresas.com/wp-content/uploads/2024/11/Ejemplos-de-Control-de-Gestion.png",
+    "categoria": "capacitacion",
+    "id": "11"
+  },
+  {
+    "titulo": "Administración de Beneficios",
+    "descripcion": "Taller para gestionar los beneficios de la ley o contratación colectiva. EN DESARROLLO",
+    "precio": "55000",
+    "avatar": "https://blog.totalpass.com.mx/wp-content/uploads/2021/07/beneficios-laborales.jpeg",
+    "categoria": "asesoria",
+    "id": "14"
+  },
+  {
+    "titulo": "Negociacion y Manejo de Conflictos",
+    "descripcion": "Taller practico para fortalecer las competencias y tecnicas para negociar y resolver conflictos. EN DESARROLLO",
+    "precio": "55000",
+    "avatar": "https://ar.archlatam.com/wp-content/uploads/2019/09/zen.jpg",
+    "categoria": "capacitacion",
+    "id": "15"
+  },
+  {
+    "titulo": "Gestionando equipos",
+    "descripcion": "Curso de 16 horas para desarrollar las habilidades necesarias para fortalecer las competencias de supervisión.\n",
+    "precio": "55000",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTu3G-bei7C6PHwj2RX0gcQN243yyz6xywFiQ&s",
+    "categoria": "capacitacion",
+    "id": "16"
+  },
+  {
+    "titulo": "Manejo de Quejas y Reclamos",
+    "descripcion": "Curso de 8 horas destinado a compartir técnicas y herramientas para abordar situaciones de quejas y reclamos, expresadas en un amplio rango de emociones, alcanzando momentos de ira y rabia intensas\n",
+    "precio": "55000",
+    "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6tX6PWJXPaTh0rVeFxe8U4XgEvieiFEe2iw&s",
+    "categoria": "capacitacion",
+    "id": "17"
   }
 ]
