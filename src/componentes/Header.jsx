@@ -1,22 +1,19 @@
 import React from 'react';
-// 1. Importamos la imagen directamente (ajusta la ruta '../' si tu Header está en otra carpeta)
 import logoEmpresa from '../pages/img/logobueno.png';
 
 function Header() {  
     return (  
-        <header style={{ backgroundColor: "rgb(76, 78, 175)", padding: "10px", textAlign: "center", color: "white" }}> 
-            <div>
+        <header style={{ backgroundColor: "rgb(76, 78, 175)", padding: "10px 20px", color: "white" }}> 
+            <div style={{ display: "flex", alignItems: "center", justifyContent: "flex-start", gap: "15px" }}>
                 <img 
                     src={logoEmpresa} 
                     alt="Logo Gente & Ideas Consultores" 
                     className='nav-logo'
-                    // 2. Agregamos dimensiones explícitas (¡Cámbialas por las reales!)
                     width="74" 
                     height="68"
-                    // 3. Le decimos al navegador que esta imagen es prioridad máxima
                     fetchpriority="high"
                 />       
-                <h1>Gente & Ideas Consultores c.a.</h1> 
+                <h1 style={{ margin: 0, fontSize: "1.5rem" }}>Gente & Ideas Consultores</h1> 
             </div> 
         </header>  
     );  

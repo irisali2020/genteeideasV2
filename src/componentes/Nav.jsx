@@ -64,7 +64,7 @@ export default function Nav() {
                             <NavLink to="/" className="nav-link">Inicio</NavLink>
                         </li>   
                         <li className="nav-item">
-                            <NavLink to="/nosotros" className="nav-link">Acerca de</NavLink>
+                            <NavLink to="/nosotros" className="nav-link">Nosotros</NavLink>
                         </li>   
                         <li className="nav-item">
                             <NavLink to="/servicios" className="nav-link">Servicios</NavLink>
@@ -104,9 +104,9 @@ export default function Nav() {
                             </SeccionUsuario>
                         ) : (
                             <SeccionUsuario>
-                                <Bienvenida className="d-none d-lg-block">
+                                {/* <Bienvenida className="d-none d-lg-block">
                                     Bienvenidos a Gente & Ideas c.a.
-                                </Bienvenida>
+                                </Bienvenida> */}
                                 <Link 
                                     to="/login" 
                                     className="btn btn-outline-light fw-bold"
