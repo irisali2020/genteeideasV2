@@ -39,10 +39,7 @@ export default function AcercaDe() {
           {/* <h1 className="display-5 fw-bold mb-4">Gente & Ideas c.a.</h1> */}
 
           <p className="display-4 fw-normal mb-5 lh-base text-white-150 text-white">
-            Nacimos en 2003 con el propósito de acompañar a las empresas para: anticipar, 
-            identificar, diseñar, aplicar y evaluar soluciones a las diversas situaciones de personal. 
-            Ofrecemos un enfoque integrador del día a día laboral con la planificación estratégica 
-            de Capital Humano.
+            Nacimos en 2003 con el propósito de acompañar a empresas a ANTICIPAR, IDENTIFICAR, DISEÑAR, APLICAR Y EVALUAR soluciones a la variada gama de retos en materia de gestión humana; ofreciendo un enfoque integrador de la investigación y teorias con las características y posibilidades presentes en su cultura; esto es, adaptando el modelo teórico a cada realidad empresarial.
           </p>          
           
         </div>      
@@ -65,7 +62,7 @@ export default function AcercaDe() {
                 </div>
                 <h4 className="fw-bold mb-3">Misión</h4>
                 <p className="text-muted mb-0">
-                  Identificar, evaluar, diseñar y aplicar soluciones a las diversas situaciones de personal con una perspectiva “desde adentro”, ésto es, comprendiendo la complejidad de las decisiones que cotidianamente se deben tomar.
+                  Identificar, evaluar, diseñar y aplicar soluciones para el área de Gestión Humana de nuestros clientes y aliados con una perspectiva integradora, adaptando modelos y diseños teóricos a la realidad y posibilidad cierta de sus empresas y su cultura.
                 </p>
               </InfoCard>
             </div>
@@ -78,7 +75,7 @@ export default function AcercaDe() {
                 </div>
                 <h4 className="fw-bold mb-3">Visión</h4>
                 <p className="text-muted mb-0">
-                  Convertirnos en aliados de aquellos que aspiran solventar asuntos de Recursos Humanos , propiciando en líderes y empleados el compromiso de alcanzar, a través de relaciones humanas fluidas y productivas, el plan de negocio con la estrategia de capital humano apropiada.
+                  Servir como aliados de las empresas que aspiran abordar los temas de Gestión Humana, propiciando en líderes y empleados EL COMPROMISO de alcanzar, a través de relaciones humanas fluidas y productivas, el plan de negocios; con la estrategia de capital humano apropiada.
 
                 </p>
               </InfoCard>
@@ -181,14 +178,16 @@ export default function AcercaDe() {
             <div className="col-12 col-md-6 col-lg-4">
               <CaseCard className="card h-100 border-0 p-4 shadow-sm">
                 <span className="badge bg-primary-subtle text-primary fw-semibold mb-3 align-self-start py-2 px-3">
-                  Reestructuración Organizacional
+                  Creación de los perfiles por competencia
                 </span>
-                <h5 className="fw-bold">Rediseño de Estructura y Cargos</h5>
+                <h5 className="fw-bold">Diagnóstico de capacidades técnicas y Desarrollo del Perfil Básico del Profesional en la función para cuidado del ambiente</h5>
                 <p className="text-muted mt-2">
-                  Alineación de descripciones de puestos, bandas de responsabilidades e indicadores clave para optimizar la toma de decisiones en mandos medios.
+                  Diseñar un conjunto de líneas estratégicas claves, resultado de la evaluación de la situación actual de las capacidades técnicas del personal de la empresa cliente, a efectos de orientar la capacitación del talento humano en el corto plazo
+
+                  Proyecto aprobado y financiado por el Banco Interamericano de Desarrollo (BID). 
                 </p>
                 <div className="mt-auto pt-3 border-top d-flex align-items-center text-primary fw-medium">
-                  <span>Incremento del 30% en claridad de roles</span>
+                  <span>Lineas estratégicas definidas</span>
                 </div>
               </CaseCard>
             </div>

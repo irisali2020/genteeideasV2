@@ -50,7 +50,7 @@ export default function Inicio() {
         <div className="container py-5">
           <div className="text-center mb-5">
             <h2 className="text-primary fw-bold text-uppercase fs-6 mb-2">Nuestras Soluciones</h2>
-            <h3 className="h1 fw-bold text-dark">Abarcamos todo el ciclo de vida del colaborador</h3>
+            <h3 className="h1 fw-bold text-dark">Abarcamos integramente todo el ciclo de vida del colaborador en la organización</h3>
           </div>
 
           <div className="row g-4">
@@ -75,7 +75,7 @@ export default function Inicio() {
                 </div>
                 <h4 className="h5 fw-bold mb-3">Búsqueda y Selección</h4>
                 <p className="text-muted mb-0">
-                  Identificamos y atraemos al mejor talento del mercado. Procesos rigurosos para asegurar el "fit" cultural perfecto.
+                  Identificamos y atraemos al mejor talento del mercado. Procesos rigurosos para asegurar el "fit" cultural.
                 </p>
               </div>
             </div>
@@ -88,7 +88,7 @@ export default function Inicio() {
                 </div>
                 <h4 className="h5 fw-bold mb-3">Formación y Desarrollo</h4>
                 <p className="text-muted mb-0">
-                  Potenciamos habilidades blandas y técnicas. Programas de capacitación a medida para líderes y equipos de alto desempeño.
+                  Potenciamos habilidades blandas y técnicas. Programas de capacitación a la medida para líderes y equipos de alto desempeño.
                 </p>
               </div>
             </div>
@@ -193,7 +193,7 @@ export default function Inicio() {
                   </div>
                   <div>
                     <p className="text-secondary small mb-0">Teléfono</p>
-                    <p className="fw-bold mb-0">+58 (212) 555-0123</p>
+                    <p className="fw-bold mb-0">+58 (412) 3694125</p>
                   </div>
                 </div>
                 <div className="d-flex align-items-center gap-3">
@@ -202,7 +202,7 @@ export default function Inicio() {
                   </div>
                   <div>
                     <p className="text-secondary small mb-0">Correo Electrónico</p>
-                    <p className="fw-bold mb-0">contacto@genteideas.com</p>
+                    <p className="fw-bold mb-0">ideasgente26@gmail.com</p>
                   </div>
                 </div>
               </div>
@@ -216,17 +216,17 @@ export default function Inicio() {
                   
                   <div className="row g-3 mb-3">
                     <div className="col-sm-6">
-                      <label className="form-label text-muted small">Nombre</label>
+                      <label className="form-label text-muted small">Nombre y Apellido</label>
                       <input type="text" name="nombre" className="form-control form-control-lg" required />
                     </div>
                     <div className="col-sm-6">
-                      <label className="form-label text-muted small">Apellido</label>
+                      <label className="form-label text-muted small">Empresa/Particular</label>
                       <input type="text" name="apellido" className="form-control form-control-lg" required />
                     </div>
                   </div>
                   
                   <div className="mb-3">
-                    <label className="form-label text-muted small">Email Corporativo</label>
+                    <label className="form-label text-muted small">Email</label>
                     <input type="email" name="email" className="form-control form-control-lg" required />
                   </div>
                   
