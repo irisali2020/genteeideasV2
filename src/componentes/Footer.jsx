@@ -37,8 +37,9 @@ function Footer() {
             <h5 className="text-white mb-3">Contacto</h5>
             <ul className="list-unstyled d-flex flex-column gap-2">
               <li>Caracas, Venezuela</li>
-              <li>+58 (212) 555-0123</li>
-              <li>contacto@genteideas.com</li>
+              <li>+58 (414) 1614246</li>
+              <li>+58 (412) 3694125</li>
+              <li>ideasgente26@gmail.com</li>
             </ul>
           </div>
 
