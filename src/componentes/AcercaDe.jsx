@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Target, Compass, Award, CheckCircle2 } from 'lucide-react';
+import { Target, Compass, Award, CheckCircle2, Users, Briefcase } from 'lucide-react';
+
 
 import campodeaccion from '../pages/img/campodeaccion.png';
 import enfoqueintegrador from '../pages/img/enfoqueintegrador.png';
@@ -225,6 +226,103 @@ export default function AcercaDe() {
           </div>
         </div>
       </section>
+      {/* --- Consultoras Fundadoras --- */}
+      <section className="py-5 bg-light">
+        <div className="container py-4">
+          <div className="text-center mb-5">
+            <h2 className="section-title text-dark">Liderazgo y Trayectoria</h2>
+            <p className="section-subtitle text-muted">
+              Más de 20 años de experiencia impulsando el talento y la transformación organizacional
+            </p>
+          </div>
+
+          <div className="row g-4 justify-content-center">
+            {/* Iris Henríquez */}
+            <div className="col-12 col-lg-6">
+              <ProfileCard className="card h-100 border-0 p-4 shadow-sm">
+                <div className="d-flex align-items-center mb-3">
+                  <div className="profile-avatar bg-primary-subtle text-primary me-3">
+                    <Users size={32} />
+                  </div>
+                  <div>
+                    <h3 className="card-heading mb-1">Iris Henríquez de Mendoza</h3>
+                    <span className="badge bg-primary-subtle text-primary fw-semibold py-1 px-2">
+                      Socia Fundadora &amp; Consultora Senior
+                    </span>
+                  </div>
+                </div>
+
+                <p className="card-text-body mb-3">
+                  Licenciada en Relaciones Industriales con más de 30 años de destacada trayectoria en la conducción estratégica de Capital Humano, control de gestión e indicadores organizacionales.
+                </p>
+
+                <div className="experience-highlights pt-3 border-top mt-auto">
+                  <h5 className="fw-semibold text-dark fs-6 mb-2 d-flex align-items-center">
+                    <Briefcase size={18} className="text-primary me-2 flex-shrink-0" />
+                    Áreas de especialidad y trayectoria:
+                  </h5>
+                  <ul className="list-unstyled card-text-body mb-0 small">
+                    <li className="d-flex align-items-start mb-2">
+                      <CheckCircle2 size={18} className="text-primary me-2 mt-1 flex-shrink-0" />
+                      <span>Planificación estratégica de RRHH, Balanced Scorecard y dimensionamiento de fuerza laboral.</span>
+                    </li>
+                    <li className="d-flex align-items-start mb-2">
+                      <CheckCircle2 size={18} className="text-primary me-2 mt-1 flex-shrink-0" />
+                      <span>Desarrollo de modelos por competencias, evaluación de desempeño y retención de talento.</span>
+                    </li>
+                    <li className="d-flex align-items-start">
+                      <CheckCircle2 size={18} className="text-primary me-2 mt-1 flex-shrink-0" />
+                      <span>Experiencia previa como Asesora de RRHH en Petróleos de Venezuela (PDVSA) y Gerente Corporativa de Recursos Humanos.</span>
+                    </li>
+                  </ul>
+                </div>
+              </ProfileCard>
+            </div>
+
+            {/* Desireé Echenique */}
+            <div className="col-12 col-lg-6">
+              <ProfileCard className="card h-100 border-0 p-4 shadow-sm">
+                <div className="d-flex align-items-center mb-3">
+                  <div className="profile-avatar bg-primary-subtle text-primary me-3">
+                    <Users size={32} />
+                  </div>
+                  <div>
+                    <h3 className="card-heading mb-1">Desireé Echenique</h3>
+                    <span className="badge bg-primary-subtle text-primary fw-semibold py-1 px-2">
+                      Socia Fundadora &amp; Consultora Senior
+                    </span>
+                  </div>
+                </div>
+
+                <p className="card-text-body mb-3">
+                  Licenciada en Relaciones Industriales egresada de la Universidad Católica Andrés Bello (UCAB), especialista en relaciones laborales, compensación estratégica y diseño organizacional.
+                </p>
+
+                <div className="experience-highlights pt-3 border-top mt-auto">
+                  <h5 className="fw-semibold text-dark fs-6 mb-2 d-flex align-items-center">
+                    <Briefcase size={18} className="text-primary me-2 flex-shrink-0" />
+                    Áreas de especialidad y trayectoria:
+                  </h5>
+                  <ul className="list-unstyled card-text-body mb-0 small">
+                    <li className="d-flex align-items-start mb-2">
+                      <CheckCircle2 size={18} className="text-primary me-2 mt-1 flex-shrink-0" />
+                      <span>Negociación laboral, clima corporativo y convivencia en ambientes de alta exigencia.</span>
+                    </li>
+                    <li className="d-flex align-items-start mb-2">
+                      <CheckCircle2 size={18} className="text-primary me-2 mt-1 flex-shrink-0" />
+                      <span>Reclutamiento y selección de mandos directivos, compensación integral y administración de personal.</span>
+                    </li>
+                    <li className="d-flex align-items-start">
+                      <CheckCircle2 size={18} className="text-primary me-2 mt-1 flex-shrink-0" />
+                      <span>Trayectoria gerencial en empresas de servicio, consumo masivo y transporte masivo (C.A. Metro de Caracas, Tropiburger, Grupo Profesional Fiesta).</span>
+                    </li>
+                  </ul>
+                </div>
+              </ProfileCard>
+            </div>
+          </div>
+        </div>
+      </section>
 
     </ContentWrapper>
   );
@@ -295,6 +393,27 @@ const CaseCard = styled.div`
   border-radius: 1rem;
   background: #ffffff;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
+  }
+`;
+
+const ProfileCard = styled.div`
+  border-radius: 1rem;
+  background: #ffffff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  .profile-avatar {
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
   &:hover {
     transform: translateY(-4px);
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08) !important;
